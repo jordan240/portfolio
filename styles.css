@@ -124,14 +124,89 @@ body {
     transition: 0.3s;
 }
 
+/* Agency Banner */
+.agency-banner {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    padding: 15px 0;
+    position: relative;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.agency-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.banner-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sponsored-by {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.agency-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.agency-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-weight: 400;
+}
+
+.banner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.banner-logo i {
+    font-size: 1.5rem;
+    color: white;
+}
+
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     position: relative;
     background: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+    padding: 60px 0;
 }
 
 .hero-container {
@@ -142,17 +217,17 @@ body {
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .gradient-text {
@@ -163,16 +238,17 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn {
@@ -830,6 +906,34 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .agency-banner {
+        padding: 12px 0;
+    }
+    
+    .banner-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .banner-text {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .agency-name {
+        font-size: 1.5rem;
+    }
+    
+    .banner-logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .banner-logo i {
+        font-size: 1.2rem;
+    }
+    
     .hamburger {
         display: flex;
     }
@@ -852,9 +956,8 @@ body {
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
+        padding: 0 1rem;
     }
 
     .hero-title {
